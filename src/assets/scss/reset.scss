@@ -20,7 +20,7 @@ picture {
 }
 
 /* CSS Reset by [class] */
-[class] {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -33,7 +33,7 @@ picture {
   appearance: none; /* button, input, meter, progress, select, textarea */
   text-decoration: none; /* a */
 }
-[class]::before,
-[class]::after {
+*::before,
+*::after {
   box-sizing: border-box;
 }

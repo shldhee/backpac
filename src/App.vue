@@ -10,7 +10,9 @@
         {{ item.name }}
       </router-link>
     </nav>
-    <router-view />
+    <main class="main">
+      <router-view />
+    </main>
   </div>
 </template>
 
@@ -43,6 +45,9 @@ export default {
 </script>
 
 <style lang="scss">
+#app {
+  padding: 20px;
+}
 .nav {
   &__link {
     padding: 10px 11px;
@@ -53,5 +58,9 @@ export default {
   .router-link-exact-active {
     color: #ff7b30;
   }
+}
+
+.main {
+  padding: 16px;
 }
 </style>

@@ -1,11 +1,14 @@
 <template>
-  <div class="card">
+  <div
+    class="card"
+    :class="direction === 'column' ? 'card--column' : 'card--row'"
+  >
     <div class="card__thumbnail-wrapper">
       <picture>
-        <source srcset="http://via.placeholder.com/300" />
+        <source srcset="http://via.placeholder.com/300/a9c7ac" />
         <img
           class="card__thumbanil"
-          src="http://via.placeholder.com/300"
+          src="http://via.placeholder.com/300/a9c7ac"
           :alt="`${title} thumbnail`"
         />
       </picture>
@@ -37,6 +40,10 @@
 <script>
 export default {
   props: {
+    direction: {
+      type: String,
+      default: 'column',
+    },
     img: {
       type: String,
       default: 'http://via.placeholder.com/300',
@@ -82,15 +89,32 @@ export default {
   max-width: 300px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  &--row {
+    max-width: 600px;
+    display: flex;
+    flex-direction: row;
+  }
   &__thumbnail-wrapper {
+    @at-root .card--row & {
+      max-width: 33.33%;
+    }
   }
   &__thumbnail {
   }
   &__content {
+    @at-root .card--row & {
+      max-width: 66.66%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
   }
   &__body {
     padding: 8px;
     border-top: 1px solid #ccc;
+    @at-root .card--row & {
+      border-top: 0;
+    }
   }
   &__label {
     display: block;
@@ -98,12 +122,16 @@ export default {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    @at-root .card--row & {
+      display: none;
+    }
   }
   &__title {
     width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    font-size: 14px;
   }
   &__description {
     width: 100%;
@@ -113,6 +141,7 @@ export default {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    font-size: 12px;
   }
   &__footer {
     height: 60px;
@@ -121,6 +150,13 @@ export default {
     justify-content: center;
     padding: 8px;
     border-top: 1px solid #ccc;
+    @at-root .card--row & {
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border-top: none;
+    }
   }
   &__rating-wrapper {
     display: flex;
@@ -142,10 +178,14 @@ export default {
     }
   }
   &__rating-text {
+    margin-top: 8px;
     width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    @at-root .card--row & {
+      margin-top: 0;
+    }
   }
 }
 </style>

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from './views/Home'
-import Card from './views/Card'
+import CardPage from './views/CardPage'
 import Form from './views/Form'
 
 Vue.use(VueRouter)
@@ -17,7 +17,7 @@ const router = new VueRouter({
     {
       path: '/card',
       name: 'card',
-      component: Card,
+      component: CardPage,
     },
     {
       path: '/form',
