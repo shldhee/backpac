@@ -50,7 +50,7 @@ export default {
     font-size: 14px;
   }
 
-  .router-link-active {
+  .router-link-exact-active {
     color: #ff7b30;
   }
 }
