@@ -1,32 +1,35 @@
 <template>
   <div class="card">
-    <div class="card__header">
+    <div class="card__thumbnail-wrapper">
       <picture>
         <source srcset="http://via.placeholder.com/300" />
         <img
           class="card__thumbanil"
           src="http://via.placeholder.com/300"
-          alt="thumbnail"
+          :alt="`${title} thumbnail`"
         />
       </picture>
     </div>
-    <div class="card__body">
-      <span class="card__label">{{ label }}</span>
-      <h3 class="card__title">{{ title }}</h3>
-      <p class="card__description">{{ description }}</p>
-    </div>
-    <div v-if="isShowFooter" class="card__footer">
-      <div v-if="rating" class="card__rating-wrapper">
-        <span
-          v-for="(rating, i) in computedRatingArray"
-          :key="i"
-          :class="{
-            'card__rating--active': rating,
-          }"
-          class="card__rating"
-        ></span>
+    <div class="card__content">
+      <div class="card__body">
+        <span class="card__label">{{ label }}</span>
+        <h3 class="card__title">{{ title }}</h3>
+        <p class="card__description">{{ description }}</p>
       </div>
-      <p v-if="ratingText" class="card__rating-text">{{ ratingText }}</p>
+
+      <div v-if="isShowFooter" class="card__footer">
+        <div v-if="rating" class="card__rating-wrapper">
+          <span
+            v-for="(rating, i) in computedRatingArray"
+            :key="i"
+            :class="{
+              'card__rating--active': rating,
+            }"
+            class="card__rating"
+          ></span>
+        </div>
+        <p v-if="ratingText" class="card__rating-text">{{ ratingText }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -79,9 +82,11 @@ export default {
   max-width: 300px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  &__header {
+  &__thumbnail-wrapper {
   }
   &__thumbnail {
+  }
+  &__content {
   }
   &__body {
     padding: 8px;
