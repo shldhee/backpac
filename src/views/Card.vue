@@ -1,9 +1,14 @@
 <template>
-  <div>card</div>
+  <div><Card /></div>
 </template>
 
 <script>
-export default {}
+import Card from '@/components/Card/Card'
+export default {
+  components: {
+    Card,
+  },
+}
 </script>
 
 <style lang="scss" scoped></style>

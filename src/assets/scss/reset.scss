@@ -11,8 +11,12 @@ body {
 
 /* Reset img */
 img {
+  vertical-align: top;
   max-width: 100%;
   height: auto;
+}
+picture {
+  display: inline-block;
 }
 
 /* CSS Reset by [class] */

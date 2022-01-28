@@ -42,7 +42,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .nav {
   &__link {
     padding: 10px 11px;
