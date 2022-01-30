@@ -12,5 +12,5 @@
 ## Script
 
 ```
-$ yarn serve
+$ yarn dev
 ```
