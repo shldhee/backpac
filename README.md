@@ -1,24 +1,16 @@
 # backpac
 
-## Project setup
-```
-yarn install
-```
+## Contributor
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+- @shldhee (이덕희)
 
-### Compiles and minifies for production
-```
-yarn build
-```
+## Tech Requirement (Tech Stack)
 
-### Lints and fixes files
-```
-yarn lint
-```
+- Vue Cli
+- Vue
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Script
+
+```
+$ yarn serve
+```
